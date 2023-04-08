@@ -14,6 +14,7 @@ import { ProductInfoComponent } from './pages/product-info/product-info.componen
 import { DeliveryComponent } from './pages/delivery/delivery.component';
 import { AboutComponent } from './pages/about/about.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { OfertaComponent } from './pages/oferta/oferta.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
     DeliveryComponent,
     AboutComponent,
     CheckoutComponent,
+    OfertaComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

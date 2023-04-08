@@ -9,6 +9,7 @@ import { ProductInfoComponent } from './pages/product-info/product-info.componen
 import { DeliveryComponent } from './pages/delivery/delivery.component';
 import { AboutComponent } from './pages/about/about.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { OfertaComponent } from './pages/oferta/oferta.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'dostavka-ta-oplata', component: DeliveryComponent },
   { path: 'about-us', component: AboutComponent },
   { path: 'checkout', component: CheckoutComponent },
+  { path: 'dogovir-oferta', component: OfertaComponent },
 ];
 
 @NgModule({
