@@ -1,0 +1,96 @@
+p {
+  margin: 0;
+  padding: 0;
+}
+
+#hero-nav {
+  height: 95px;
+}
+
+.hero-logo {
+  background-color: #b5d8f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95px;
+  padding: 0 15px;
+}
+
+.hero-img {
+  height: 50px;
+}
+
+.menu-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  height: 65px;
+  width: 65px;
+  margin: 0 15px;
+  transition: 200ms ease-in-out;
+  font-weight: bold;
+}
+
+.menu-link:hover {
+  border: 2px solid #b5d8f7;
+}
+
+.menu-icon {
+  width: 30px;
+}
+
+.my-dropdown-toggle::after {
+  content: none;
+}
+
+.phone-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+}
+
+.phone-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #b5d8f7;
+  border: 2px solid #b5d8f7;
+}
+
+.phone-btn:hover {
+  background-color: #f8f9fa;
+}
+
+.phone-icon {
+  width: 30px;
+}
+
+.phone-text {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.phone-link {
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
+.phone-link:hover {
+  color: #b5d8f7;
+}
+
+.phone-info-elem {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.phone-info-elem span {
+  font-size: 12px;
+}
