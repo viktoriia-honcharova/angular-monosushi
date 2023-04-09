@@ -1,0 +1,70 @@
+.zone-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.zone-header {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.zone-text {
+  font-size: 14px;
+  width: 255px;
+}
+
+.delivery-img {
+  height: 90px;
+  margin-right: 15px;
+}
+
+.green {
+  color: #27ae60;
+}
+
+.yellow {
+  color: #f2c94c;
+}
+
+.red {
+  color: #ff0000;
+}
+
+.delivery-info-wrapper {
+  width: 70%;
+  margin: 80px auto 0;
+}
+
+.payment-header {
+  font-weight: bold;
+  font-size: 40px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.payment-icon-wrapper {
+  background-color: #b5d8f7;
+  width: 63px;
+  height: 60px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.payment-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.payment-text-header {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.payment-text {
+  font-size: 14px;
+  width: 300px;
+}

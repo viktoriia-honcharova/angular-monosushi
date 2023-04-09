@@ -7,3 +7,23 @@ body {
 body::-webkit-scrollbar {
   display: none;
 }
+
+.header-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.page-header::before {
+  content: "";
+  display: block;
+  height: 5px;
+  background-color: #b5d8f7;
+  margin: 0 auto;
+}
+
+.page-header {
+  font-weight: bold;
+  font-size: 40px;
+  display: inline-block;
+  margin-top: 50px;
+}
