@@ -1,1 +1,31 @@
-<p>admin-discount works!</p>
+<button class="admin-add-btn" (click)="displayActionFunc()">
+  ДОДАТИ АКЦІЮ
+</button>
+<div *ngIf="displayAction" class="mt-5">
+  <form [formGroup]="discountForm" (ngSubmit)="addDiscount()">
+    <div class="mb-3 d-flex">
+      <input
+        type="text"
+        class="form-control me-3 admin-text-input"
+        placeholder="* Назва"
+      />
+      <input
+        type="text"
+        class="form-control admin-text-input"
+        placeholder="* Заголовок"
+      />
+    </div>
+    <div class="mb-3">
+      <textarea
+        class="form-control"
+        cols="30"
+        rows="4"
+        placeholder="* Опис"
+      ></textarea>
+    </div>
+    <div class="mb-3">
+      <input class="form-control form-control-lg" type="file" />
+    </div>
+    <button class="admin-add-btn mt-2">ЗБЕРЕГТИ</button>
+  </form>
+</div>

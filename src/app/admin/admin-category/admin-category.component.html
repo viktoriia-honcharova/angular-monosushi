@@ -1,1 +1,23 @@
-<p>admin-category works!</p>
+<button class="admin-add-btn" (click)="displayCategoryFunc()">
+  ДОДАТИ КАТЕГОРІЮ
+</button>
+<div *ngIf="displayCategory" class="mt-5">
+  <form [formGroup]="categoryForm" (ngSubmit)="addCategory()">
+    <div class="mb-3 d-flex">
+      <input
+        type="text"
+        class="form-control me-3 admin-text-input"
+        placeholder="* Назва"
+      />
+      <input
+        type="text"
+        class="form-control admin-text-input"
+        placeholder="* Шлях"
+      />
+    </div>
+    <div class="mb-3">
+      <input class="form-control form-control-lg" type="file" />
+    </div>
+    <button class="admin-add-btn mt-2">ЗБЕРЕГТИ</button>
+  </form>
+</div>

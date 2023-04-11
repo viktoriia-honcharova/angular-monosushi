@@ -11,6 +11,12 @@ import { AboutComponent } from './pages/about/about.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { OfertaComponent } from './pages/oferta/oferta.component';
 
+import { AdminComponent } from './admin/admin.component';
+import { AdminCategoryComponent } from './admin/admin-category/admin-category.component';
+import { AdminProductComponent } from './admin/admin-product/admin-product.component';
+import { AdminDiscountComponent } from './admin/admin-discount/admin-discount.component';
+import { AdminOrderComponent } from './admin/admin-order/admin-order.component';
+
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -20,6 +26,33 @@ const routes: Routes = [
   { path: 'about-us', component: AboutComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'dogovir-oferta', component: OfertaComponent },
+  {
+    path: 'admin',
+    component: AdminComponent,
+    children: [
+      {
+        path: 'category',
+        component: AdminCategoryComponent,
+      },
+      {
+        path: 'product',
+        component: AdminProductComponent,
+      },
+      {
+        path: 'action',
+        component: AdminDiscountComponent,
+      },
+      {
+        path: 'order',
+        component: AdminOrderComponent,
+      },
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'action',
+      },
+    ],
+  },
 ];
 
 @NgModule({

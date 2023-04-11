@@ -32,3 +32,21 @@ body::-webkit-scrollbar {
   font-weight: bold;
   font-size: 20px;
 }
+
+/* ADMIN STYLES */
+.admin-add-btn {
+  width: 250px;
+  height: 60px;
+  background-color: #b5d8f7;
+  border: none;
+  border-radius: 10px;
+}
+
+.admin-text-input {
+  height: 60px;
+  width: 350px;
+}
+
+.admin-file-input {
+  height: 60px;
+}
