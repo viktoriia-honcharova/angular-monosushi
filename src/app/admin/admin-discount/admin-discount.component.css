@@ -1,3 +1,8 @@
 textarea {
   resize: none;
 }
+
+.discount-img {
+  display: block;
+  width: 716px;
+}

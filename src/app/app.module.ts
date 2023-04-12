@@ -24,6 +24,9 @@ import { AdminCategoryComponent } from './admin/admin-category/admin-category.co
 import { AdminProductComponent } from './admin/admin-product/admin-product.component';
 import { AdminDiscountComponent } from './admin/admin-discount/admin-discount.component';
 import { AdminOrderComponent } from './admin/admin-order/admin-order.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -51,6 +54,8 @@ import { AdminOrderComponent } from './admin/admin-order/admin-order.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage()),
   ],
   providers: [],
   bootstrap: [AppComponent],
