@@ -7,5 +7,13 @@
       "title": "50% знижки на Рол тижня",
       "description": "Щотижня діє знижка 50% на один з ролів у нашому меню. Рол тижня ви можете знайти на головній сторінці нашого сайту. Знижка діє при мінімальній сумі замовлення 300 грн. Ця акція не поєднується з іншими акціями."
     }
+  ],
+  "categories": [
+    {
+      "name": "Роли",
+      "path": "roli",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/angular-monosushi.appspot.com/o/images%2Fnav-img-rolls.svg?alt=media&token=502446fb-335e-4736-b358-0bd880bccaba",
+      "id": 1
+    }
   ]
 }

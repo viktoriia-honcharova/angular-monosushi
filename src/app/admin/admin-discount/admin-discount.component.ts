@@ -18,7 +18,7 @@ import {
   styleUrls: ['./admin-discount.component.css'],
 })
 export class AdminDiscountComponent implements OnInit {
-  public displayAction = true;
+  public displayAction = false;
   public discountForm!: FormGroup;
 
   public adminDiscounts!: IDiscountResponse[];
