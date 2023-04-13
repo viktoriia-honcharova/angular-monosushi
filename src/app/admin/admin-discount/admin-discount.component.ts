@@ -78,6 +78,7 @@ export class AdminDiscountComponent implements OnInit {
     this.discountForm.reset();
     this.isUploaded = false;
     this.uploadPercent = 0;
+    this.displayAction = false;
   }
 
   editDiscount(discount: IDiscountResponse): void {
@@ -87,6 +88,7 @@ export class AdminDiscountComponent implements OnInit {
       title: discount.title,
       description: discount.description,
     });
+    this.displayAction = true;
     this.editStatus = true;
     this.currentDiscountId = discount.id;
     this.isUploaded = true;

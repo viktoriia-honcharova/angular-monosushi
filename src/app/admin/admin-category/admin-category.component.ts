@@ -73,6 +73,7 @@ export class AdminCategoryComponent implements OnInit {
     this.categoryForm.reset();
     this.isUploaded = false;
     this.uploadPercent = 0;
+    this.displayCategory = false;
   }
 
   editCategory(category: ICategoryResponse): void {
@@ -84,6 +85,7 @@ export class AdminCategoryComponent implements OnInit {
     this.editStatus = true;
     this.currentCategoryId = category.id;
     this.isUploaded = true;
+    this.displayCategory = true;
   }
 
   deleteCategory(discount: ICategoryResponse): void {
