@@ -1,1 +1,134 @@
-<p>admin-product works!</p>
+<button class="admin-add-btn" (click)="displayProductFunc()">
+  ДОДАТИ ТОВАР
+</button>
+<div *ngIf="displayProduct" class="mt-5">
+  <form [formGroup]="productForm" (ngSubmit)="addProduct()">
+    <div class="col mb-3">
+      <select
+        formControlName="category"
+        class="form-select"
+        style="width: 716px"
+      >
+        <option [ngValue]="category" *ngFor="let category of adminCategories">
+          {{ category.name }}
+        </option>
+      </select>
+    </div>
+    <div class="mb-3 d-flex">
+      <input
+        formControlName="name"
+        type="text"
+        class="form-control me-3 admin-text-input"
+        placeholder="* Назва"
+      />
+      <input
+        formControlName="path"
+        type="text"
+        class="form-control admin-text-input"
+        placeholder="* Шлях"
+      />
+    </div>
+    <div class="mb-3">
+      <input
+        formControlName="ingredients"
+        type="text"
+        class="form-control"
+        placeholder="* Інгрідієнти"
+        style="width: 716px"
+      />
+    </div>
+    <div class="mb-3 d-flex">
+      <input
+        formControlName="weight"
+        type="text"
+        class="form-control me-3 admin-text-input"
+        placeholder="* Вага"
+      />
+      <input
+        formControlName="price"
+        type="text"
+        class="form-control admin-text-input"
+        placeholder="* Ціна"
+      />
+    </div>
+    <ng-container *ngIf="!isUploaded">
+      <div class="mb-3">
+        <input
+          class="form-control form-control-lg"
+          type="file"
+          style="width: 716px"
+          (change)="upload($event)"
+        />
+      </div>
+      <div
+        class="progress mb-3"
+        role="progressbar"
+        aria-label="Info striped example"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        style="width: 716px"
+      >
+        <div
+          class="progress-bar progress-bar-striped bg-info"
+          [style.width.%]="uploadPercent"
+        ></div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="isUploaded">
+      <img [src]="valueByControl('imagePath')" alt="" class="discount-img" />
+      <button
+        type="button"
+        class="btn btn-danger img-delete-btn"
+        (click)="deleteImage()"
+      >
+        ВИДАЛИТИ
+      </button>
+    </ng-container>
+
+    <button
+      [disabled]="productForm.invalid"
+      type="submit"
+      class="admin-add-btn mt-2"
+    >
+      ЗБЕРЕГТИ
+    </button>
+  </form>
+</div>
+<div class="row">
+  <div class="col-12">
+    <table class="table admin-table mt-5">
+      <thead>
+        <tr>
+          <th scope="col">Назва</th>
+          <th scope="col">Шлях</th>
+          <th scope="col">Інгрідієнти</th>
+          <th scope="col">Вага</th>
+          <th scope="col">Ціна</th>
+          <th scope="col">Картинка</th>
+          <th>Дії</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of adminProducts">
+          <td>{{ product.name }}</td>
+          <td>{{ product.path }}</td>
+          <td>{{ product.ingredients }}</td>
+          <td>{{ product.weight }}</td>
+          <td>{{ product.price }}</td>
+          <td>
+            <img [src]="product.imagePath" alt="" height="50px" />
+          </td>
+          <td>
+            <button (click)="editProduct(product)" class="table-actions-btn">
+              Редагувати
+            </button>
+
+            <button (click)="deleteProduct(product)" class="table-actions-btn">
+              Видалити
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
