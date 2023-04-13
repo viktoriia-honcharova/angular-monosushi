@@ -9,7 +9,10 @@
         class="form-select"
         style="width: 716px"
       >
-        <option [ngValue]="category" *ngFor="let category of adminCategories">
+        <option
+          [ngValue]="category.id"
+          *ngFor="let category of adminCategories"
+        >
           {{ category.name }}
         </option>
       </select>

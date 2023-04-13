@@ -32,6 +32,17 @@
       "imagePath": "https://firebasestorage.googleapis.com/v0/b/angular-monosushi.appspot.com/o/images%2F5.-maki-z-tunczem.jpg.pagespeed.ce.a76pRjJKFp.jpg?alt=media&token=d0639fdb-7059-4d81-aecf-f81535aaf9fe",
       "count": null,
       "id": 1
+    },
+    {
+      "category": 1,
+      "name": "Філадельфія з лососем",
+      "path": "filadelfiya-z-lososem",
+      "ingredients": "Риc, крем сир, огірок, лосось",
+      "weight": "280 г",
+      "price": "267 грн",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/angular-monosushi.appspot.com/o/images%2F1.-filadelfiya-z-lososem.jpg.pagespeed.ce.axvTz8qDqj.jpg?alt=media&token=7dd77830-b91d-4989-8196-70ff7c927e1c",
+      "count": 1,
+      "id": 2
     }
   ]
 }
