@@ -22,6 +22,7 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'actions', component: DiscountComponent },
   { path: 'product-category/:category', component: ProductComponent },
+  { path: 'product-category/:category/:path', component: ProductInfoComponent },
   { path: 'dostavka-ta-oplata', component: DeliveryComponent },
   { path: 'about-us', component: AboutComponent },
   { path: 'checkout', component: CheckoutComponent },

@@ -24,3 +24,50 @@
 .prod-card:hover {
   border: 1px solid #b5d8f7;
 }
+
+.product-name {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-name:hover {
+  color: #b5d8f7;
+  cursor: pointer;
+}
+
+.product-ing {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.ing-parag {
+  width: 260px;
+}
+
+.prod-img-container {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.product-img {
+  object-fit: contain;
+}
+
+.product-img:hover {
+  cursor: pointer;
+}
+
+.number-input {
+  width: 50px;
+  border: none;
+  text-align: center;
+}
+
+.number-input:focus {
+  outline: none;
+}

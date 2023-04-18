@@ -68,23 +68,37 @@
       <div class="card w-100 m-4 p-4 prod-card">
         <div class="prod-img-container">
           <img
+            [routerLink]="[
+              '/product-category/' + product.category.path,
+              product.path
+            ]"
             [src]="product.imagePath"
-            class="card-img-top d-block"
+            class="card-img-top d-block product-img"
             alt="..."
           />
         </div>
 
         <div class="card-body">
-          <h3 class="text-center fw-bold">{{ product.name }}</h3>
-          <div class="d-flex justify-content-between">
-            <p>{{ product.ingredients }}</p>
+          <div
+            [routerLink]="[
+              '/product-category/' + product.category.path,
+              product.path
+            ]"
+            class="product-name"
+          >
+            <h3 class="text-center fw-bold">
+              {{ product.name }}
+            </h3>
+          </div>
+          <div class="product-ing">
+            <p class="ing-parag">{{ product.ingredients }}</p>
             <p class="fw-bold">{{ product.weight }}</p>
           </div>
           <div class="prod-card-footer">
             <p class="fw-bold">{{ product.price }}</p>
             <div class="btn-group" role="group">
               <button type="button" class="btn btn-light">-</button>
-              <button type="button" class="btn btn-light">1</button>
+              <input type="text" class="number-input" value="1" />
               <button type="button" class="btn btn-light">+</button>
             </div>
             <button class="order-btn">ЗАМОВИТИ</button>

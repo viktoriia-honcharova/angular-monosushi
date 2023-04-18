@@ -14,6 +14,24 @@
       "path": "roli",
       "imagePath": "https://firebasestorage.googleapis.com/v0/b/angular-monosushi.appspot.com/o/images%2Fnav-img-rolls.svg?alt=media&token=502446fb-335e-4736-b358-0bd880bccaba",
       "id": 1
+    },
+    {
+      "name": "Сети",
+      "path": "setu",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/angular-monosushi.appspot.com/o/images%2Fnav-img-sets.svg?alt=media&token=c279082b-f41e-4253-a24f-8b09be8a9f81",
+      "id": 2
+    },
+    {
+      "name": "Напої",
+      "path": "napoyi",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/angular-monosushi.appspot.com/o/images%2Fnav-img-drinks.svg?alt=media&token=9eff9438-822c-4ca4-8d6c-41839227ba9e",
+      "id": 3
+    },
+    {
+      "name": "Соуси",
+      "path": "sousi",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/angular-monosushi.appspot.com/o/images%2Ficon.svg?alt=media&token=835a6f6d-3bce-4f59-93cc-fa39c5ea5584",
+      "id": 4
     }
   ],
   "products": [
@@ -29,20 +47,73 @@
       "ingredients": "Рис, норі, тунець",
       "weight": "120 г",
       "price": "84 грн",
-      "imagePath": "https://firebasestorage.googleapis.com/v0/b/angular-monosushi.appspot.com/o/images%2F5.-maki-z-tunczem.jpg.pagespeed.ce.a76pRjJKFp.jpg?alt=media&token=d0639fdb-7059-4d81-aecf-f81535aaf9fe",
-      "count": null,
-      "id": 1
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/angular-monosushi.appspot.com/o/images%2F5.-maki-z-tunczem.jpg.pagespeed.ce.a76pRjJKFp.jpg?alt=media&token=ef739ca9-8915-4156-8418-ce2961f24540",
+      "count": 1,
+      "id": 6
     },
     {
-      "category": 1,
+      "category": {
+        "name": "Роли",
+        "path": "roli",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/angular-monosushi.appspot.com/o/images%2Fnav-img-rolls.svg?alt=media&token=502446fb-335e-4736-b358-0bd880bccaba",
+        "id": 1
+      },
       "name": "Філадельфія з лососем",
       "path": "filadelfiya-z-lososem",
       "ingredients": "Риc, крем сир, огірок, лосось",
       "weight": "280 г",
       "price": "267 грн",
-      "imagePath": "https://firebasestorage.googleapis.com/v0/b/angular-monosushi.appspot.com/o/images%2F1.-filadelfiya-z-lososem.jpg.pagespeed.ce.axvTz8qDqj.jpg?alt=media&token=7dd77830-b91d-4989-8196-70ff7c927e1c",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/angular-monosushi.appspot.com/o/images%2F1.-filadelfiya-z-lososem.jpg.pagespeed.ce.axvTz8qDqj.jpg?alt=media&token=a1e4a57d-e19b-4142-b734-31f2ceeb0b19",
       "count": 1,
-      "id": 2
+      "id": 7
+    },
+    {
+      "category": {
+        "name": "Сети",
+        "path": "setu",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/angular-monosushi.appspot.com/o/images%2Fnav-img-sets.svg?alt=media&token=c279082b-f41e-4253-a24f-8b09be8a9f81",
+        "id": 2
+      },
+      "name": "Сет Філадельфія",
+      "path": "zapechenyj-set",
+      "ingredients": "Філадельфія: з лососем / в кунжуті / з тунцем / з вугрем",
+      "weight": "1070 г",
+      "price": "1075 грн",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/angular-monosushi.appspot.com/o/images%2Fimgonline-com-ua-compressed-jknw6idh54664-scaled.jpg.pagespeed.ce.4A9elt-ybs.jpg?alt=media&token=f3b21370-1426-484b-9dbb-1ccf8130af7f",
+      "count": null,
+      "id": 8
+    },
+    {
+      "category": {
+        "name": "Напої",
+        "path": "napoyi",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/angular-monosushi.appspot.com/o/images%2Fnav-img-drinks.svg?alt=media&token=9eff9438-822c-4ca4-8d6c-41839227ba9e",
+        "id": 3
+      },
+      "name": "Pepsi",
+      "path": "pepsi",
+      "ingredients": null,
+      "weight": "0.33 л",
+      "price": "35 грн",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/angular-monosushi.appspot.com/o/images%2Fpepsicola.jpg.pagespeed.ce._GE3wDu348.jpg?alt=media&token=a530cfd0-b9ff-4c91-a998-941b6290c6be",
+      "count": null,
+      "id": 9
+    },
+    {
+      "category": {
+        "name": "Соуси",
+        "path": "sousi",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/angular-monosushi.appspot.com/o/images%2Ficon.svg?alt=media&token=835a6f6d-3bce-4f59-93cc-fa39c5ea5584",
+        "id": 4
+      },
+      "name": "Імбир",
+      "path": "imbyr",
+      "ingredients": null,
+      "weight": "30 г",
+      "price": "12 грн",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/angular-monosushi.appspot.com/o/images%2F3333.png.pagespeed.ce.vQR20Z8Iaq.png?alt=media&token=d93b9ae0-9fdb-4547-82b5-a5d82d8971e7",
+      "count": null,
+      "id": 10
     }
   ]
 }
