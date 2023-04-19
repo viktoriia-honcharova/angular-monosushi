@@ -1,0 +1,28 @@
+.prod-info-card {
+  border: none;
+  margin-top: 150px;
+}
+
+.prod-info-img {
+  object-fit: contain;
+}
+
+.prod-img-container {
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prod-info-name {
+  font-weight: bold;
+  font-size: 60px;
+}
+
+.prod-info-text {
+  font-size: 18px;
+}
+
+.prod-card-footer {
+  width: 450px;
+}

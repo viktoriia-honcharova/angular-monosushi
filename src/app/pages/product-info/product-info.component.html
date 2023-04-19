@@ -1,1 +1,59 @@
-<p>product-info works!</p>
+<div class="container">
+  <div class="card mb-3 prod-info-card">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <div class="prod-img-container">
+          <img
+            [src]="currentProduct.imagePath"
+            class="img-fluid rounded-start prod-info-img"
+            [alt]="currentProduct.name"
+          />
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+      <div class="col-md-6">
+        <div class="card-body">
+          <h5 class="card-title prod-info-name">{{ currentProduct.name }}</h5>
+          <p
+            class="card-text prod-info-text mt-4"
+            *ngIf="currentProduct.ingredients"
+          >
+            Склад: {{ currentProduct.ingredients }}
+          </p>
+          <p class="card-text prod-info-text mb-5">
+            Вага: {{ currentProduct.weight }}
+          </p>
+          <div class="prod-card-footer">
+            <p class="fw-bold">
+              {{ currentProduct.price * currentProduct.count }} грн
+            </p>
+            <div class="btn-group" role="group">
+              <button
+                type="button"
+                class="btn btn-light"
+                (click)="productCount(currentProduct, false)"
+              >
+                -
+              </button>
+              <input
+                type="text"
+                class="number-input"
+                [value]="currentProduct.count"
+              />
+              <button
+                type="button"
+                class="btn btn-light"
+                (click)="productCount(currentProduct, true)"
+              >
+                +
+              </button>
+            </div>
+            <button class="order-btn" (click)="addToBasket(currentProduct)">
+              ЗАМОВИТИ
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

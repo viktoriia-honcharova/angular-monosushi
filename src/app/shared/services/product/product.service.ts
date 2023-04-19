@@ -6,11 +6,12 @@ import {
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
-export class ProductService {
+export class ProductService implements Resolve<IProductResponse> {
   public products!: IProductResponse[];
   private url = environment.BACKEND_URL;
   private api = { products: `${this.url}products` };
@@ -44,5 +45,11 @@ export class ProductService {
 
   delete(id: number): Observable<void> {
     return this.http.delete<void>(`${this.api.products}/${id}`);
+  }
+
+  resolve(route: ActivatedRouteSnapshot): Observable<IProductResponse> {
+    return this.http.get<IProductResponse>(
+      `${this.api.products}/${route.paramMap.get('id')}`
+    );
   }
 }

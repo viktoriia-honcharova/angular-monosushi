@@ -86,3 +86,20 @@ body::-webkit-scrollbar {
 .order-btn:hover {
   background-color: transparent;
 }
+
+/* PRODUCT */
+.prod-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.number-input {
+  width: 50px;
+  border: none;
+  text-align: center;
+}
+
+.number-input:focus {
+  outline: none;
+}

@@ -46,7 +46,7 @@
       "path": "maki-z-tunczem",
       "ingredients": "Рис, норі, тунець",
       "weight": "120 г",
-      "price": "84 грн",
+      "price": "84",
       "imagePath": "https://firebasestorage.googleapis.com/v0/b/angular-monosushi.appspot.com/o/images%2F5.-maki-z-tunczem.jpg.pagespeed.ce.a76pRjJKFp.jpg?alt=media&token=ef739ca9-8915-4156-8418-ce2961f24540",
       "count": 1,
       "id": 6
@@ -62,7 +62,7 @@
       "path": "filadelfiya-z-lososem",
       "ingredients": "Риc, крем сир, огірок, лосось",
       "weight": "280 г",
-      "price": "267 грн",
+      "price": "267",
       "imagePath": "https://firebasestorage.googleapis.com/v0/b/angular-monosushi.appspot.com/o/images%2F1.-filadelfiya-z-lososem.jpg.pagespeed.ce.axvTz8qDqj.jpg?alt=media&token=a1e4a57d-e19b-4142-b734-31f2ceeb0b19",
       "count": 1,
       "id": 7
@@ -78,7 +78,7 @@
       "path": "zapechenyj-set",
       "ingredients": "Філадельфія: з лососем / в кунжуті / з тунцем / з вугрем",
       "weight": "1070 г",
-      "price": "1075 грн",
+      "price": "1075",
       "imagePath": "https://firebasestorage.googleapis.com/v0/b/angular-monosushi.appspot.com/o/images%2Fimgonline-com-ua-compressed-jknw6idh54664-scaled.jpg.pagespeed.ce.4A9elt-ybs.jpg?alt=media&token=f3b21370-1426-484b-9dbb-1ccf8130af7f",
       "count": null,
       "id": 8
@@ -94,7 +94,7 @@
       "path": "pepsi",
       "ingredients": null,
       "weight": "0.33 л",
-      "price": "35 грн",
+      "price": "35",
       "imagePath": "https://firebasestorage.googleapis.com/v0/b/angular-monosushi.appspot.com/o/images%2Fpepsicola.jpg.pagespeed.ce._GE3wDu348.jpg?alt=media&token=a530cfd0-b9ff-4c91-a998-941b6290c6be",
       "count": null,
       "id": 9
@@ -110,7 +110,7 @@
       "path": "imbyr",
       "ingredients": null,
       "weight": "30 г",
-      "price": "12 грн",
+      "price": "12",
       "imagePath": "https://firebasestorage.googleapis.com/v0/b/angular-monosushi.appspot.com/o/images%2F3333.png.pagespeed.ce.vQR20Z8Iaq.png?alt=media&token=d93b9ae0-9fdb-4547-82b5-a5d82d8971e7",
       "count": null,
       "id": 10

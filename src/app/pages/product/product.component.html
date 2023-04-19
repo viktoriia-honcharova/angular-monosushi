@@ -70,7 +70,7 @@
           <img
             [routerLink]="[
               '/product-category/' + product.category.path,
-              product.path
+              product.id
             ]"
             [src]="product.imagePath"
             class="card-img-top d-block product-img"
@@ -82,7 +82,7 @@
           <div
             [routerLink]="[
               '/product-category/' + product.category.path,
-              product.path
+              product.id
             ]"
             class="product-name"
           >

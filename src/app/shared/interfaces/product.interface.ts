@@ -6,8 +6,9 @@ export interface IProductRequest {
   path: string;
   ingredients: string;
   weight: string;
-  price: string;
+  price: number;
   imagePath: string;
+  count: number;
 }
 
 export interface IProductResponse extends IProductRequest {

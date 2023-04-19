@@ -16,13 +16,20 @@ import { AdminCategoryComponent } from './admin/admin-category/admin-category.co
 import { AdminProductComponent } from './admin/admin-product/admin-product.component';
 import { AdminDiscountComponent } from './admin/admin-discount/admin-discount.component';
 import { AdminOrderComponent } from './admin/admin-order/admin-order.component';
+import { ProductService } from './shared/services/product/product.service';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'actions', component: DiscountComponent },
   { path: 'product-category/:category', component: ProductComponent },
-  { path: 'product-category/:category/:path', component: ProductInfoComponent },
+  {
+    path: 'product-category/:category/:id',
+    component: ProductInfoComponent,
+    resolve: {
+      productInfo: ProductService,
+    },
+  },
   { path: 'dostavka-ta-oplata', component: DeliveryComponent },
   { path: 'about-us', component: AboutComponent },
   { path: 'checkout', component: CheckoutComponent },
