@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IProductResponse } from 'src/app/shared/interfaces/product.interface';
+import { OrderService } from 'src/app/shared/services/order/order.service';
 import { ProductService } from 'src/app/shared/services/product/product.service';
 
 @Component({
@@ -13,7 +14,8 @@ export class ProductInfoComponent implements OnInit {
 
   constructor(
     private productService: ProductService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private orderService: OrderService
   ) {}
 
   ngOnInit(): void {
@@ -31,9 +33,9 @@ export class ProductInfoComponent implements OnInit {
 
   productCount(product: IProductResponse, value: boolean): void {
     if (value) {
-      ++product.count;
+      ++this.currentProduct.count;
     } else if (!value && product.count > 1) {
-      --product.count;
+      --this.currentProduct.count;
     }
   }
 
@@ -53,5 +55,6 @@ export class ProductInfoComponent implements OnInit {
 
     localStorage.setItem('basket', JSON.stringify(basket));
     product.count = 1;
+    this.orderService.changeBasket.next(true);
   }
 }

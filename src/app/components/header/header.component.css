@@ -94,3 +94,7 @@ p {
 .phone-info-elem span {
   font-size: 12px;
 }
+
+.checkout-item {
+  width: 100px;
+}
