@@ -25,7 +25,7 @@
 }
 
 .about-icon-wrapper {
-  background-color: #b5d8f7;
+  background-color: var(--primary-color);
   width: 85px;
   height: 85px;
   border-radius: 10px;

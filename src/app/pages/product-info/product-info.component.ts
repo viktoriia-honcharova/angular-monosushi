@@ -33,9 +33,9 @@ export class ProductInfoComponent implements OnInit {
 
   productCount(product: IProductResponse, value: boolean): void {
     if (value) {
-      ++this.currentProduct.count;
+      ++product.count;
     } else if (!value && product.count > 1) {
-      --this.currentProduct.count;
+      --product.count;
     }
   }
 

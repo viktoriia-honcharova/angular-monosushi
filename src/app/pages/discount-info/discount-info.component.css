@@ -1,0 +1,15 @@
+.discount-description {
+  width: 50%;
+  margin: 0 auto 50px;
+}
+
+.header-wrapper {
+  background-color: var(--primary-color);
+  width: 60%;
+  margin: 100px auto 50px;
+  border-radius: 20px;
+}
+
+.page-header::before {
+  background-color: black;
+}

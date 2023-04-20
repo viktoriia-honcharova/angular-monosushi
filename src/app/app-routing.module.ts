@@ -17,11 +17,19 @@ import { AdminProductComponent } from './admin/admin-product/admin-product.compo
 import { AdminDiscountComponent } from './admin/admin-discount/admin-discount.component';
 import { AdminOrderComponent } from './admin/admin-order/admin-order.component';
 import { ProductService } from './shared/services/product/product.service';
+import { DiscountService } from './shared/services/discount/discount.service';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'actions', component: DiscountComponent },
+  {
+    path: 'actions/:id',
+    component: DiscountInfoComponent,
+    resolve: {
+      discountInfo: DiscountService,
+    },
+  },
   { path: 'product-category/:category', component: ProductComponent },
   {
     path: 'product-category/:category/:id',

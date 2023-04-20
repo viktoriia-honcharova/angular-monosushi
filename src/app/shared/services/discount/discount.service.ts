@@ -6,11 +6,13 @@ import {
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { IProductResponse } from '../../interfaces/product.interface';
+import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
-export class DiscountService {
+export class DiscountService implements Resolve<IProductResponse> {
   public discounts!: IDiscountResponse[];
   private url = environment.BACKEND_URL;
   private api = { discounts: `${this.url}discounts` };
@@ -38,5 +40,11 @@ export class DiscountService {
 
   delete(id: number): Observable<void> {
     return this.http.delete<void>(`${this.api.discounts}/${id}`);
+  }
+
+  resolve(route: ActivatedRouteSnapshot): Observable<IProductResponse> {
+    return this.http.get<IProductResponse>(
+      `${this.api.discounts}/${route.paramMap.get('id')}`
+    );
   }
 }

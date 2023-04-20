@@ -1,7 +1,7 @@
 hr {
-  background-color: #b5d8f7;
+  background-color: var(--primary-color);
   height: 5px;
-  border: 1px solid #b5d8f7;
+  border: 1px solid var(--primary-color);
 }
 
 .footer {
@@ -25,7 +25,7 @@ a {
 }
 
 a:hover {
-  color: #b5d8f7;
+  color: var(--primary-color);
 }
 
 .pay-card {
@@ -59,8 +59,8 @@ a:hover {
 .media-link {
   width: 40px;
   height: 40px;
-  background-color: #b5d8f7;
-  border: 2px solid #b5d8f7;
+  background-color: var(--primary-color);
+  border: 2px solid var(--primary-color);
   display: flex;
   justify-content: center;
   align-items: center;

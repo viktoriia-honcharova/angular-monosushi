@@ -9,7 +9,7 @@
 }
 
 .hero span {
-  color: #b5d8f7;
+  color: var(--primary-color);
 }
 
 .hero-img {
@@ -32,8 +32,8 @@
 }
 
 .hero-text button {
-  background-color: #b5d8f7;
-  border: 2px solid #b5d8f7;
+  background-color: var(--primary-color);
+  border: 2px solid var(--primary-color);
   font-weight: bold;
   margin-top: 20px;
   width: 190px;
@@ -43,7 +43,7 @@
 
 .hero-info {
   height: 175px;
-  background-color: #b5d8f7;
+  background-color: var(--primary-color);
 }
 
 .hero-info-col {

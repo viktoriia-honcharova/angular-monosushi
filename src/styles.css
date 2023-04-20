@@ -1,7 +1,15 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 
+:root {
+  --primary-color: #b5d8f7;
+}
+
 body {
   font-family: "Comfortaa", cursive;
+}
+
+p {
+  white-space: pre-wrap;
 }
 
 body::-webkit-scrollbar {
@@ -17,7 +25,7 @@ body::-webkit-scrollbar {
   content: "";
   display: block;
   height: 5px;
-  background-color: #b5d8f7;
+  background-color: var(--primary-color);
   margin: 0 auto;
 }
 

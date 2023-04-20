@@ -16,7 +16,7 @@
 }
 
 .prod-card:hover {
-  border: 1px solid #b5d8f7;
+  border: 1px solid var(--primary-color);
 }
 
 .product-name {
@@ -27,7 +27,7 @@
 }
 
 .product-name:hover {
-  color: #b5d8f7;
+  color: var(--primary-color);
   cursor: pointer;
 }
 

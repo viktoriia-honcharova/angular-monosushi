@@ -3,9 +3,30 @@
     {
       "id": 1,
       "imagePath": "https://monosushi.com.ua/wp-content/uploads/2022/07/imgonline-com-ua-compressed-ryna9n84oqh1-scaled-697x379.jpg",
-      "name": "рол тижня",
+      "name": "Рол тижня",
       "title": "50% знижки на Рол тижня",
-      "description": "Щотижня діє знижка 50% на один з ролів у нашому меню. Рол тижня ви можете знайти на головній сторінці нашого сайту. Знижка діє при мінімальній сумі замовлення 300 грн. Ця акція не поєднується з іншими акціями."
+      "description": "⦿ Щотижня діє знижка 50% на один з ролів у нашому меню. <br/>\n⦿ Рол тижня ви можете знайти на головній сторінці нашого сайту. \\n\n⦿ Знижка діє при мінімальній сумі замовлення 300 грн. \\n\n⦿ Ця акція не поєднується з іншими акціями."
+    },
+    {
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/angular-monosushi.appspot.com/o/images%2Fimgonline-com-ua-compressed-ajbic74qfau00-scaled-697x379.jpg?alt=media&token=2cbcbc6f-da28-470b-9f21-3175cdd2bafb",
+      "name": "3+1=5",
+      "title": "3+1=5",
+      "description": "⦿ Замовляйте 5 ролів, а платіть за 4.\n⦿ Замовляйте 10 ролів, а платіть за 8 і так далі.\n⦿ Безкоштовним вважається рол з найменшою вартістю.\n⦿ Ця акція не поєднується з іншими акціями.",
+      "id": 2
+    },
+    {
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/angular-monosushi.appspot.com/o/images%2Fimgonline-com-ua-compressed-pa0akdpwddstmsv1-scaled-697x379.jpg?alt=media&token=1b6f5a59-7f32-4cec-8b3a-7ded13fa9b5c",
+      "name": "Самовивіз",
+      "title": "Самовивіз",
+      "description": "Забирайте своє замовлення самостійно та отримуйте такі переваги:\n\n01 Запечені моно макі з лососем у подарунок.\n02 Відсутність мінімальної суми замовлення.\n03 Час очікування на замовлення до 30 хв.\n\n⦿ Для отримання акційного ролу у подарунок зберігається умова мінімальної суми замовлення 300 грн.\n⦿ Ця акція не поєднується з іншими акціями.",
+      "id": 3
+    },
+    {
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/angular-monosushi.appspot.com/o/images%2Fden-nar-scaled-697x379.jpg?alt=media&token=2d4418cc-4279-4853-a666-fea5ed081bc9",
+      "name": "День народження з Моносуші",
+      "title": "День народження з Моносуші",
+      "description": "⦿ При оформленні замовлення вкажіть промокод “День народження” та отримайте “Запечений сет” безкоштовно до Вашого замовлення.\n⦿ Термін дії акції – День народження плюс один день до та після свята.\n⦿ Ця акція починає діяти при мінімальній сумі замовлення 750 грн.\n⦿ Для отримання подарунку іменинник має показати кур’єру оригінал документу, що підтверджує його дату народження.\n⦿ Ця акція не поєднується з іншими акціями.",
+      "id": 4
     }
   ],
   "categories": [
@@ -80,7 +101,7 @@
       "weight": "1070 г",
       "price": "1075",
       "imagePath": "https://firebasestorage.googleapis.com/v0/b/angular-monosushi.appspot.com/o/images%2Fimgonline-com-ua-compressed-jknw6idh54664-scaled.jpg.pagespeed.ce.4A9elt-ybs.jpg?alt=media&token=f3b21370-1426-484b-9dbb-1ccf8130af7f",
-      "count": null,
+      "count": 1,
       "id": 8
     },
     {
@@ -96,7 +117,7 @@
       "weight": "0.33 л",
       "price": "35",
       "imagePath": "https://firebasestorage.googleapis.com/v0/b/angular-monosushi.appspot.com/o/images%2Fpepsicola.jpg.pagespeed.ce._GE3wDu348.jpg?alt=media&token=a530cfd0-b9ff-4c91-a998-941b6290c6be",
-      "count": null,
+      "count": 1,
       "id": 9
     },
     {
@@ -112,7 +133,7 @@
       "weight": "30 г",
       "price": "12",
       "imagePath": "https://firebasestorage.googleapis.com/v0/b/angular-monosushi.appspot.com/o/images%2F3333.png.pagespeed.ce.vQR20Z8Iaq.png?alt=media&token=d93b9ae0-9fdb-4547-82b5-a5d82d8971e7",
-      "count": null,
+      "count": 1,
       "id": 10
     }
   ]

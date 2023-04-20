@@ -44,7 +44,7 @@
 }
 
 .payment-icon-wrapper {
-  background-color: #b5d8f7;
+  background-color: var(--primary-color);
   width: 63px;
   height: 60px;
   border-radius: 10px;
