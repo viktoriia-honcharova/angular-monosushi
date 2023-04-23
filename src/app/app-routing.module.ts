@@ -18,6 +18,9 @@ import { AdminDiscountComponent } from './admin/admin-discount/admin-discount.co
 import { AdminOrderComponent } from './admin/admin-order/admin-order.component';
 import { ProductService } from './shared/services/product/product.service';
 import { DiscountService } from './shared/services/discount/discount.service';
+import { AuthGuard } from './shared/guards/auth/auth.guard';
+import { AuthorizationComponent } from './pages/authorization/authorization.component';
+import { CabinetComponent } from './pages/cabinet/cabinet.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -42,9 +45,12 @@ const routes: Routes = [
   { path: 'about-us', component: AboutComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'dogovir-oferta', component: OfertaComponent },
+  { path: 'auth', component: AuthorizationComponent },
+  { path: 'cabinet', component: CabinetComponent, canActivate: [AuthGuard] },
   {
     path: 'admin',
     component: AdminComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: 'category',
