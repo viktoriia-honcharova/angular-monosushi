@@ -24,11 +24,14 @@ import { AdminCategoryComponent } from './admin/admin-category/admin-category.co
 import { AdminProductComponent } from './admin/admin-product/admin-product.component';
 import { AdminDiscountComponent } from './admin/admin-discount/admin-discount.component';
 import { AdminOrderComponent } from './admin/admin-order/admin-order.component';
-import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
-import { environment } from '../environments/environment';
-import { provideStorage, getStorage } from '@angular/fire/storage';
 import { AuthorizationComponent } from './pages/authorization/authorization.component';
 import { CabinetComponent } from './pages/cabinet/cabinet.component';
+
+import { environment } from '../environments/environment';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { provideStorage, getStorage } from '@angular/fire/storage';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { provideAuth, getAuth } from '@angular/fire/auth';
 
 @NgModule({
   declarations: [
@@ -60,6 +63,8 @@ import { CabinetComponent } from './pages/cabinet/cabinet.component';
     HttpClientModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideStorage(() => getStorage()),
+    provideFirestore(() => getFirestore()),
+    provideAuth(() => getAuth()),
   ],
   providers: [],
   bootstrap: [AppComponent],
