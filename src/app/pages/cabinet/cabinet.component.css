@@ -1,0 +1,20 @@
+.admin-nav {
+  margin-top: 60px;
+}
+
+.admin-nav-btn {
+  height: 80px;
+  width: 250px;
+  font-size: 20px;
+  background-color: transparent;
+  border-left: none;
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;
+}
+
+.admin-nav-btn.active {
+  font-weight: bold;
+  border-top: 3px solid #b5d8f7;
+  border-right: none;
+}

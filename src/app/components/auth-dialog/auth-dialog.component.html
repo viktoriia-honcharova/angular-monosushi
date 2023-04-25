@@ -1,0 +1,80 @@
+<div class="p-5">
+  <div class="data-heading-wrapper">
+    <h2 class="fw-bold text-center mb-5">
+      {{ !isRegistred ? "Зареєструватись" : "Вхід в кабінет" }}
+    </h2>
+  </div>
+  <form [formGroup]="authUserForm">
+    <ng-container *ngIf="!isRegistred">
+      <div class="mb-3 d-flex">
+        <input
+          formControlName="firstName"
+          type="text"
+          class="form-control me-3 admin-text-input"
+          placeholder="* Ваше ім'я"
+        />
+        <input
+          formControlName="lastName"
+          type="text"
+          class="form-control admin-text-input"
+          placeholder="* Ваше прізвище"
+        />
+      </div>
+      <div class="mb-3">
+        <input
+          formControlName="phone"
+          type="text"
+          class="form-control admin-text-input"
+          placeholder="* Ваш номер телефону"
+          style="width: 716px"
+        />
+      </div>
+    </ng-container>
+    <div class="mb-3">
+      <input
+        formControlName="email"
+        type="email"
+        class="form-control admin-text-input"
+        placeholder="* Ваш емейл"
+        style="width: 716px"
+      />
+    </div>
+    <div class="mb-3">
+      <input
+        formControlName="password"
+        type="password"
+        class="form-control admin-text-input"
+        placeholder="* Ваш пароль"
+        style="width: 716px"
+      />
+    </div>
+
+    <button
+      [disabled]="authUserForm.invalid"
+      type="submit"
+      class="admin-add-btn mt-2 w-100"
+      *ngIf="!isRegistred"
+      (click)="registerUser()"
+      mat-dialog-close
+    >
+      ЗАРЕЄСТРУВАТИСЬ
+    </button>
+    <button
+      [disabled]="authUserForm.invalid"
+      type="submit"
+      class="admin-add-btn mt-2 w-100"
+      *ngIf="isRegistred"
+      (click)="loginUser()"
+      mat-dialog-close
+    >
+      УВІЙТИ В КАБІНЕТ
+    </button>
+    <button
+      type="button"
+      class="text-center mt-4 auth-btn"
+      (click)="changeRegistred()"
+    >
+      {{ !isRegistred ? "Вже зареєстровані? Увійти" : "Зареєструватись" }}
+    </button>
+  </form>
+</div>

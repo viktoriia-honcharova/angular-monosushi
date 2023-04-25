@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,6 +33,10 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { provideStorage, getStorage } from '@angular/fire/storage';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { provideAuth, getAuth } from '@angular/fire/auth';
+import { PersonalDataComponent } from './pages/personal-data/personal-data.component';
+import { OrdersHistoryComponent } from './pages/orders-history/orders-history.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthDialogComponent } from './components/auth-dialog/auth-dialog.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +59,9 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
     AdminOrderComponent,
     AuthorizationComponent,
     CabinetComponent,
+    PersonalDataComponent,
+    OrdersHistoryComponent,
+    AuthDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,6 +73,8 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
     provideStorage(() => getStorage()),
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),
+    BrowserAnimationsModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

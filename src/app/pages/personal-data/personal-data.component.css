@@ -1,0 +1,15 @@
+.elem {
+  background: var(--primary-color);
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin: 0 15px 30px 0;
+}
+
+.data-heading-wrapper {
+  display: flex;
+}

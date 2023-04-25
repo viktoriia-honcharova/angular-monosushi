@@ -1,1 +1,34 @@
-<p>cabinet works!</p>
+<div class="container">
+  <div class="cabinet-wrapper">
+    <div class="container-fluid">
+      <div class="d-flex align-items-start">
+        <div
+          class="nav flex-column nav-pills me-3 mt-5 ms-1"
+          id="v-pills-tab"
+          role="tablist"
+          aria-orientation="vertical"
+        >
+          <button
+            class="admin-nav-btn"
+            type="button"
+            [routerLink]="['personal-data']"
+            routerLinkActive="active"
+          >
+            Особисті дані
+          </button>
+          <button
+            class="admin-nav-btn"
+            [routerLink]="['orders-history']"
+            routerLinkActive="active"
+            type="button"
+          >
+            Історія замовлень
+          </button>
+        </div>
+        <div class="tab-content mt-5" id="v-pills-tabContent">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

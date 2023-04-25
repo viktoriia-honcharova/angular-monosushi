@@ -21,6 +21,8 @@ import { DiscountService } from './shared/services/discount/discount.service';
 import { AuthGuard } from './shared/guards/auth/auth.guard';
 import { AuthorizationComponent } from './pages/authorization/authorization.component';
 import { CabinetComponent } from './pages/cabinet/cabinet.component';
+import { PersonalDataComponent } from './pages/personal-data/personal-data.component';
+import { OrdersHistoryComponent } from './pages/orders-history/orders-history.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -46,7 +48,26 @@ const routes: Routes = [
   { path: 'checkout', component: CheckoutComponent },
   { path: 'dogovir-oferta', component: OfertaComponent },
   { path: 'auth', component: AuthorizationComponent },
-  { path: 'cabinet', component: CabinetComponent, canActivate: [AuthGuard] },
+  {
+    path: 'cabinet',
+    component: CabinetComponent,
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: 'personal-data',
+        component: PersonalDataComponent,
+      },
+      {
+        path: 'orders-history',
+        component: OrdersHistoryComponent,
+      },
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'personal-data',
+      },
+    ],
+  },
   {
     path: 'admin',
     component: AdminComponent,

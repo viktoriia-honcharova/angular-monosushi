@@ -111,3 +111,14 @@ body::-webkit-scrollbar {
 .number-input:focus {
   outline: none;
 }
+
+/* ANGULAR MATERIAL STYLE */
+
+.dialog-back {
+  background-color: rgba(0, 0, 0, 0.701);
+}
+
+.auth-dialog {
+  width: 800px;
+  min-height: 300px;
+}
