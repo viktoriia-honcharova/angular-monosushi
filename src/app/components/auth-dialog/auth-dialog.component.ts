@@ -6,7 +6,12 @@ import {
   signInWithEmailAndPassword,
 } from '@angular/fire/auth';
 import { Firestore, doc, docData, setDoc } from '@angular/fire/firestore';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ROLE } from 'src/app/shared/constants/role.constant';
@@ -19,7 +24,10 @@ import { AccountService } from 'src/app/shared/services/account/account.service'
 })
 export class AuthDialogComponent implements OnInit {
   public authUserForm!: FormGroup;
+  public registerUserForm!: FormGroup;
   public isRegistred = true;
+  private registerData!: any;
+  public checkPassword = false;
 
   constructor(
     private fb: FormBuilder,
@@ -31,16 +39,25 @@ export class AuthDialogComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.initauthUserForm();
+    this.initAuthUserForm();
+    this.initRegisterUserForm();
   }
 
-  initauthUserForm(): void {
+  initAuthUserForm(): void {
     this.authUserForm = this.fb.group({
-      firstName: [null],
-      lastName: [null],
-      phone: [null],
       email: [null, Validators.required],
       password: [null, Validators.required],
+    });
+  }
+
+  initRegisterUserForm(): void {
+    this.registerUserForm = this.fb.group({
+      firstName: [null, Validators.required],
+      lastName: [null, Validators.required],
+      phone: [null, Validators.required],
+      email: [null, Validators.required],
+      password: [null, Validators.required],
+      confirmedPassword: [null, Validators.required],
     });
   }
 
@@ -83,11 +100,12 @@ export class AuthDialogComponent implements OnInit {
   }
 
   registerUser(): void {
-    const { email, password } = this.authUserForm.value;
+    const { email, password } = this.registerUserForm.value;
+    this.registerData = this.registerUserForm.value;
     this.emailSignUp(email, password)
       .then(() => {
         this.isRegistred = !this.isRegistred;
-        this.authUserForm.reset();
+        this.registerUserForm.reset();
       })
       .catch((e) => {
         console.error(e.message);
@@ -102,13 +120,30 @@ export class AuthDialogComponent implements OnInit {
     );
     const user = {
       email: credential.user.email,
-      firstName: this.authUserForm.value.firstName,
-      lastName: this.authUserForm.value.lastName,
-      phone: this.authUserForm.value.phone,
+      firstName: this.registerUserForm.value.firstName,
+      lastName: this.registerUserForm.value.lastName,
+      phone: this.registerUserForm.value.phone,
       address: '',
       orders: [],
       role: 'USER',
     };
     setDoc(doc(this.afs, 'users', credential.user.uid), user);
+  }
+
+  checkConfirmedPassword(): void {
+    this.checkPassword = this.password.value === this.confirmedPassword.value;
+    if (this.password.value !== this.confirmedPassword.value) {
+      this.registerUserForm.controls['confirmedPassword'].setErrors({
+        matchError: 'Паролі не збігаються',
+      });
+    }
+  }
+
+  get password(): AbstractControl {
+    return this.registerUserForm.controls['password'];
+  }
+
+  get confirmedPassword(): AbstractControl {
+    return this.registerUserForm.controls['confirmedPassword'];
   }
 }

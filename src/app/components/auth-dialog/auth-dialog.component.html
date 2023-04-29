@@ -1,11 +1,9 @@
 <div class="p-5">
-  <div class="data-heading-wrapper">
-    <h2 class="fw-bold text-center mb-5">
-      {{ !isRegistred ? "Зареєструватись" : "Вхід в кабінет" }}
-    </h2>
-  </div>
-  <form [formGroup]="authUserForm">
-    <ng-container *ngIf="!isRegistred">
+  <ng-container *ngIf="!isRegistred">
+    <div class="data-heading-wrapper">
+      <h2 class="fw-bold text-center mb-5">Зареєструватись</h2>
+    </div>
+    <form [formGroup]="registerUserForm">
       <div class="mb-3 d-flex">
         <input
           formControlName="firstName"
@@ -24,57 +22,95 @@
         <input
           formControlName="phone"
           type="text"
-          class="form-control admin-text-input"
+          class="form-control admin-text-input w-100"
           placeholder="* Ваш номер телефону"
+        />
+      </div>
+      <div class="mb-3">
+        <input
+          formControlName="email"
+          type="email"
+          class="form-control admin-text-input w-100"
+          placeholder="* Ваш емейл"
+        />
+      </div>
+      <div class="mb-3 d-flex">
+        <input
+          formControlName="password"
+          type="password"
+          class="form-control admin-text-input me-3"
+          placeholder="* Пароль"
+          (input)="checkConfirmedPassword()"
+        />
+        <input
+          formControlName="confirmedPassword"
+          type="password"
+          class="form-control admin-text-input"
+          placeholder="* Повторіть пароль"
+          (input)="checkConfirmedPassword()"
+        />
+      </div>
+      <p class="error" *ngIf="!checkPassword">Паролі не збігаються</p>
+
+      <button
+        [disabled]="registerUserForm.invalid && !checkPassword"
+        type="submit"
+        class="admin-add-btn mt-2 w-100"
+        (click)="registerUser()"
+        mat-dialog-close
+      >
+        ЗАРЕЄСТРУВАТИСЬ
+      </button>
+      <button
+        type="button"
+        class="text-center mt-4 auth-btn"
+        (click)="changeRegistred()"
+      >
+        Вже зареєстровані? Увійти
+      </button>
+    </form>
+  </ng-container>
+  <ng-container *ngIf="isRegistred">
+    <div class="data-heading-wrapper">
+      <h2 class="fw-bold text-center mb-5">Вхід в кабінет</h2>
+    </div>
+    <form [formGroup]="authUserForm">
+      <div class="mb-3">
+        <input
+          formControlName="email"
+          type="email"
+          class="form-control admin-text-input"
+          placeholder="* Ваш емейл"
           style="width: 716px"
         />
       </div>
-    </ng-container>
-    <div class="mb-3">
-      <input
-        formControlName="email"
-        type="email"
-        class="form-control admin-text-input"
-        placeholder="* Ваш емейл"
-        style="width: 716px"
-      />
-    </div>
-    <div class="mb-3">
-      <input
-        formControlName="password"
-        type="password"
-        class="form-control admin-text-input"
-        placeholder="* Ваш пароль"
-        style="width: 716px"
-      />
-    </div>
+      <div class="mb-3">
+        <input
+          formControlName="password"
+          type="password"
+          class="form-control admin-text-input"
+          placeholder="* Пароль"
+          style="width: 716px"
+        />
+      </div>
 
-    <button
-      [disabled]="authUserForm.invalid"
-      type="submit"
-      class="admin-add-btn mt-2 w-100"
-      *ngIf="!isRegistred"
-      (click)="registerUser()"
-      mat-dialog-close
-    >
-      ЗАРЕЄСТРУВАТИСЬ
-    </button>
-    <button
-      [disabled]="authUserForm.invalid"
-      type="submit"
-      class="admin-add-btn mt-2 w-100"
-      *ngIf="isRegistred"
-      (click)="loginUser()"
-      mat-dialog-close
-    >
-      УВІЙТИ В КАБІНЕТ
-    </button>
-    <button
-      type="button"
-      class="text-center mt-4 auth-btn"
-      (click)="changeRegistred()"
-    >
-      {{ !isRegistred ? "Вже зареєстровані? Увійти" : "Зареєструватись" }}
-    </button>
-  </form>
+      <button
+        [disabled]="authUserForm.invalid"
+        type="submit"
+        class="admin-add-btn mt-2 w-100"
+        *ngIf="isRegistred"
+        (click)="loginUser()"
+        mat-dialog-close
+      >
+        УВІЙТИ В КАБІНЕТ
+      </button>
+      <button
+        type="button"
+        class="text-center mt-4 auth-btn"
+        (click)="changeRegistred()"
+      >
+        Зареєструватись
+      </button>
+    </form>
+  </ng-container>
 </div>
