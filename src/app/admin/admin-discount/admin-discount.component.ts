@@ -8,7 +8,6 @@ import {
   percentage,
   ref,
   Storage,
-  uploadBytes,
   uploadBytesResumable,
 } from '@angular/fire/storage';
 
