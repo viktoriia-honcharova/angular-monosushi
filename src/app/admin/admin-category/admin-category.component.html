@@ -58,7 +58,7 @@
     <table class="table admin-table mt-5">
       <thead>
         <tr>
-          <th scope="col">№</th>
+          <th scope="col">ID</th>
           <th scope="col">Назва</th>
           <th scope="col">Шлях</th>
           <th scope="col">Картинка</th>
@@ -67,7 +67,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let category of adminCategories">
-          <td>№{{ category.id }}</td>
+          <td>{{ category.id }}</td>
           <td>{{ category.name }}</td>
           <td>{{ category.path }}</td>
           <td>

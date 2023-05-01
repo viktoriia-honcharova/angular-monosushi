@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IDiscountResponse } from 'src/app/shared/interfaces/discount.interface';
+import { DiscountService } from 'src/app/shared/services/discount/discount.service';
 
 @Component({
   selector: 'app-discount-info',
@@ -10,11 +11,9 @@ import { IDiscountResponse } from 'src/app/shared/interfaces/discount.interface'
 export class DiscountInfoComponent implements OnInit {
   public currentDiscount!: IDiscountResponse;
 
-  constructor(private activatedRoute: ActivatedRoute) {}
+  constructor(private discountService: DiscountService) {}
 
   ngOnInit(): void {
-    this.activatedRoute.data.subscribe((response) => {
-      this.currentDiscount = response.discountInfo;
-    });
+    this.currentDiscount = this.discountService.currentDiscount;
   }
 }

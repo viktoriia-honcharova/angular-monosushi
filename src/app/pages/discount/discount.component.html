@@ -12,6 +12,7 @@
           <h2 class="card-title fw-bold">{{ discount.name }}</h2>
           <a
             [routerLink]="['/actions/', discount.id]"
+            (click)="learnMore(discount)"
             class="btn discount-btn fw-bold"
             >ДІЗНАТИСЬ БІЛЬШЕ</a
           >

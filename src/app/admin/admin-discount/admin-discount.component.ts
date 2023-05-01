@@ -22,7 +22,7 @@ export class AdminDiscountComponent implements OnInit {
 
   public adminDiscounts!: IDiscountResponse[];
   public editStatus = false;
-  private currentDiscountId = 0;
+  private currentDiscountId!: string;
   public uploadPercent!: number;
   public isUploaded = false;
 
@@ -56,20 +56,23 @@ export class AdminDiscountComponent implements OnInit {
   }
 
   getDiscounts(): void {
-    this.discountService.getAll().subscribe((data) => {
-      this.adminDiscounts = data;
+    this.discountService.getAllFirebase().subscribe((data) => {
+      this.adminDiscounts = data as IDiscountResponse[];
     });
   }
 
   addDiscount(): void {
     if (!this.editStatus) {
-      this.discountService.create(this.discountForm.value).subscribe(() => {
+      this.discountService.createFirebase(this.discountForm.value).then(() => {
         this.getDiscounts();
       });
     } else {
       this.discountService
-        .update(this.discountForm.value, this.currentDiscountId)
-        .subscribe(() => {
+        .updateFirebase(
+          this.discountForm.value,
+          this.currentDiscountId as string
+        )
+        .then(() => {
           this.getDiscounts();
         });
     }
@@ -89,12 +92,12 @@ export class AdminDiscountComponent implements OnInit {
     });
     this.displayAction = true;
     this.editStatus = true;
-    this.currentDiscountId = discount.id;
+    this.currentDiscountId = discount.id as string;
     this.isUploaded = true;
   }
 
   deleteDiscount(discount: IDiscountResponse): void {
-    this.discountService.delete(discount.id).subscribe(() => {
+    this.discountService.deleteFirebase(discount.id as string).then(() => {
       this.getDiscounts();
     });
   }

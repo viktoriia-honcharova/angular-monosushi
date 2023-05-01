@@ -24,7 +24,7 @@ export class AdminCategoryComponent implements OnInit {
 
   public adminCategories!: ICategoryResponse[];
   public editStatus = false;
-  private currentCategoryId = 0;
+  private currentCategoryId!: number | string;
   public uploadPercent!: number;
   public isUploaded = false;
 
@@ -52,20 +52,35 @@ export class AdminCategoryComponent implements OnInit {
   }
 
   getCategories(): void {
-    this.categoryService.getAll().subscribe((data) => {
-      this.adminCategories = data;
+    // this.categoryService.getAll().subscribe((data) => {
+    //   this.adminCategories = data;
+    // });
+
+    this.categoryService.getAllFirebase().subscribe((data) => {
+      this.adminCategories = data as ICategoryResponse[];
     });
   }
 
   addCategory(): void {
     if (!this.editStatus) {
-      this.categoryService.create(this.categoryForm.value).subscribe(() => {
+      // this.categoryService.create(this.categoryForm.value).subscribe(() => {
+      //   this.getCategories();
+      // });
+      this.categoryService.createFirebase(this.categoryForm.value).then(() => {
         this.getCategories();
       });
     } else {
+      // this.categoryService
+      //   .update(this.categoryForm.value, this.currentCategoryId)
+      //   .subscribe(() => {
+      //     this.getCategories();
+      //   });
       this.categoryService
-        .update(this.categoryForm.value, this.currentCategoryId)
-        .subscribe(() => {
+        .updateFirebase(
+          this.categoryForm.value,
+          this.currentCategoryId as string
+        )
+        .then(() => {
           this.getCategories();
         });
     }
@@ -83,13 +98,16 @@ export class AdminCategoryComponent implements OnInit {
       imagePath: category.imagePath,
     });
     this.editStatus = true;
-    this.currentCategoryId = category.id;
+    this.currentCategoryId = category.id as number;
     this.isUploaded = true;
     this.displayCategory = true;
   }
 
-  deleteCategory(discount: ICategoryResponse): void {
-    this.categoryService.delete(discount.id).subscribe(() => {
+  deleteCategory(category: ICategoryResponse): void {
+    // this.categoryService.delete(discount.id as number).subscribe(() => {
+    //   this.getCategories();
+    // });
+    this.categoryService.deleteFirebase(category.id as string).then(() => {
       this.getCategories();
     });
   }

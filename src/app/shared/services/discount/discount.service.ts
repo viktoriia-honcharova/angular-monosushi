@@ -8,43 +8,50 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { IProductResponse } from '../../interfaces/product.interface';
 import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
+import {
+  Firestore,
+  CollectionReference,
+  addDoc,
+  collectionData,
+  doc,
+  updateDoc,
+  deleteDoc,
+  docData,
+} from '@angular/fire/firestore';
+import { DocumentData, collection } from '@firebase/firestore';
 
 @Injectable({
   providedIn: 'root',
 })
-export class DiscountService implements Resolve<IProductResponse> {
+export class DiscountService {
   public discounts!: IDiscountResponse[];
-  private url = environment.BACKEND_URL;
-  private api = { discounts: `${this.url}discounts` };
+  private discountCollection!: CollectionReference<DocumentData>;
+  public currentDiscount!: IDiscountResponse;
 
-  constructor(private http: HttpClient) {}
-
-  getAll(): Observable<IDiscountResponse[]> {
-    return this.http.get<IDiscountResponse[]>(this.api.discounts);
+  constructor(private http: HttpClient, private afs: Firestore) {
+    this.discountCollection = collection(this.afs, 'discounts');
   }
 
-  getOne(id: number): Observable<IDiscountResponse> {
-    return this.http.get<IDiscountResponse>(`${this.api.discounts}/${id}`);
+  getAllFirebase() {
+    return collectionData(this.discountCollection, { idField: 'id' });
   }
 
-  create(discount: IDiscountRequest): Observable<IDiscountResponse> {
-    return this.http.post<IDiscountResponse>(this.api.discounts, discount);
+  getOneFirebase(id: string) {
+    const discountDocumentReference = doc(this.afs, `discounts/${id}`);
+    return docData(discountDocumentReference, { idField: 'id' });
   }
 
-  update(discount: IDiscountRequest, id: number): Observable<IDiscountRequest> {
-    return this.http.patch<IDiscountResponse>(
-      `${this.api.discounts}/${id}`,
-      discount
-    );
+  createFirebase(discount: IDiscountRequest) {
+    return addDoc(this.discountCollection, discount);
   }
 
-  delete(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.api.discounts}/${id}`);
+  updateFirebase(category: IDiscountRequest, id: string) {
+    const discountDocumentReference = doc(this.afs, `discounts/${id}`);
+    return updateDoc(discountDocumentReference, { ...category });
   }
 
-  resolve(route: ActivatedRouteSnapshot): Observable<IProductResponse> {
-    return this.http.get<IProductResponse>(
-      `${this.api.discounts}/${route.paramMap.get('id')}`
-    );
+  deleteFirebase(id: string) {
+    const discountDocumentReference = doc(this.afs, `discounts/${id}`);
+    return deleteDoc(discountDocumentReference);
   }
 }
