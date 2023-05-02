@@ -5,6 +5,7 @@ import { IProductResponse } from 'src/app/shared/interfaces/product.interface';
 import { AccountService } from 'src/app/shared/services/account/account.service';
 import { OrderService } from 'src/app/shared/services/order/order.service';
 import { AuthDialogComponent } from '../auth-dialog/auth-dialog.component';
+import { ProductService } from 'src/app/shared/services/product/product.service';
 
 @Component({
   selector: 'app-header',
@@ -20,6 +21,7 @@ export class HeaderComponent implements OnInit {
   constructor(
     private orderService: OrderService,
     private accountService: AccountService,
+    private productService: ProductService,
     public dialog: MatDialog
   ) {}
 
@@ -83,5 +85,9 @@ export class HeaderComponent implements OnInit {
       .subscribe((result) => {
         console.log(result);
       });
+  }
+
+  changeCategory(category: string): void {
+    this.productService.currentCategory = category;
   }
 }

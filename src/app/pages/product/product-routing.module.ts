@@ -12,9 +12,6 @@ const routes: Routes = [
   {
     path: ':id',
     component: ProductInfoComponent,
-    resolve: {
-      productInfo: ProductService,
-    },
   },
 ];
 

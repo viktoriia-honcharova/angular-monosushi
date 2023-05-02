@@ -19,16 +19,7 @@ export class ProductInfoComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.activatedRoute.data.subscribe((response) => {
-      this.currentProduct = response.productInfo;
-    });
-  }
-
-  getProduct(): void {
-    // const id = Number(this.activatedRoute.snapshot.paramMap.get('id'));
-    // this.productService.getOne(id).subscribe((data) => {
-    //   this.currentProduct = data;
-    // });
+    this.currentProduct = this.productService.currentProduct;
   }
 
   productCount(product: IProductResponse, value: boolean): void {

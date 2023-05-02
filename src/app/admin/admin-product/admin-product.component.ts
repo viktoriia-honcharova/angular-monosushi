@@ -26,7 +26,7 @@ export class AdminProductComponent implements OnInit {
   public adminProducts!: IProductResponse[];
   public adminCategories!: ICategoryResponse[];
   public editStatus = false;
-  private currentProductId = 0;
+  private currentProductId!: string;
   public uploadPercent!: number;
   public isUploaded = false;
 
@@ -50,8 +50,8 @@ export class AdminProductComponent implements OnInit {
   }
 
   loadCategories(): void {
-    this.categoryService.getAll().subscribe((data) => {
-      this.adminCategories = data;
+    this.categoryService.getAllFirebase().subscribe((data) => {
+      this.adminCategories = data as ICategoryResponse[];
       this.productForm.patchValue({
         category: this.adminCategories[0].id,
       });
@@ -72,20 +72,20 @@ export class AdminProductComponent implements OnInit {
   }
 
   getProducts(): void {
-    this.productService.getAll().subscribe((data) => {
-      this.adminProducts = data;
+    this.productService.getAllFirebase().subscribe((data) => {
+      this.adminProducts = data as IProductResponse[];
     });
   }
 
   addProduct(): void {
     if (!this.editStatus) {
-      this.productService.create(this.productForm.value).subscribe(() => {
+      this.productService.createFirebase(this.productForm.value).then(() => {
         this.getProducts();
       });
     } else {
       this.productService
-        .update(this.productForm.value, this.currentProductId)
-        .subscribe(() => {
+        .updateFirebase(this.productForm.value, this.currentProductId as string)
+        .then(() => {
           this.getProducts();
         });
     }
@@ -113,7 +113,7 @@ export class AdminProductComponent implements OnInit {
   }
 
   deleteProduct(product: IProductResponse): void {
-    this.productService.delete(product.id).subscribe(() => {
+    this.productService.deleteFirebase(product.id).then(() => {
       this.getProducts();
     });
   }

@@ -70,8 +70,9 @@
           <img
             [routerLink]="[
               '/product-category/' + product.category.path,
-              product.id
+              product.path
             ]"
+            (click)="learnMore(product)"
             [src]="product.imagePath"
             class="card-img-top d-block product-img"
             alt="..."
@@ -84,6 +85,7 @@
               '/product-category/' + product.category.path,
               product.id
             ]"
+            (click)="learnMore(product)"
             class="product-name"
           >
             <h3 class="text-center fw-bold">
